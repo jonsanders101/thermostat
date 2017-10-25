@@ -19,4 +19,8 @@ As an energy conscious homeowner
 So I don't waste too much energy,
 I want the maximum temperature to be 25 degrees when the power saving mode is on
 
+As a warm human,
+So I don't get too hot,
+I want the maximum temperature to be be 32 degrees when the power saving mode is off
+
 ```

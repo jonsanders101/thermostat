@@ -3,10 +3,15 @@
 function Thermostat() {
   const DEFAULT_TEMPERATURE = 20;
   this._temperature = DEFAULT_TEMPERATURE;
+  this._powerSavingModeLimit = 25;
 }
 
-Thermostat.prototype.powerSavingMode = function(on) {
-   this._powerSavingMode = true;
+Thermostat.prototype.powerSavingMode = function(mode) {
+   if (mode == 'on') {
+     this._powerSavingModeLimit = 25;
+   } else if (mode == 'off') {
+     this._powerSavingModeLimit = 32;
+   }
 }
 
 Thermostat.prototype.temperature = function() {
@@ -14,7 +19,7 @@ Thermostat.prototype.temperature = function() {
 }
 
 Thermostat.prototype.up = function() {
-  if (this._temperature >= 25 && this._powerSavingMode == true) throw new Error('Maximum temperature is 25 degrees');
+  if (this._temperature >= this._powerSavingModeLimit) throw new Error('Maximum temperature is '+this._powerSavingModeLimit+' degrees');
   this._temperature++;
 }
 
