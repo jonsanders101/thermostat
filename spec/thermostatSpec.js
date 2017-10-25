@@ -31,6 +31,12 @@ describe('Thermostat', function () {
       thermostat.down();
       expect(thermostat.temperature()).toEqual(19);
     })
+    it('throws an error', function () {
+      for (var i = 0; i < 10; i++) {
+        thermostat.down();
+      }
+      expect(function () { thermostat.down() }).toThrowError('Minimum temperature is 10')
+    })
 
   })
 
