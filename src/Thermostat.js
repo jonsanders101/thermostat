@@ -1,7 +1,8 @@
 'use strict';
 
 function Thermostat() {
-  this._temperature = 20
+  const DEFAULT_TEMPERATURE = 20;
+  this._temperature = DEFAULT_TEMPERATURE;
 }
 
 Thermostat.prototype.temperature = function() {
