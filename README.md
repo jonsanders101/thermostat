@@ -14,4 +14,9 @@ I want to decrease the temperature of my thermostat
 As a human,
 So that my pipes do not burst,
 I want the temperature not to drop below 10 degrees
+
+As an energy conscious homeowner
+So I don't waste too much energy,
+I want the maximum temperature to be 25 degrees when the power saving mode is on
+
 ```

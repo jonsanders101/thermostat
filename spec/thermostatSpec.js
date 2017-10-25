@@ -37,7 +37,17 @@ describe('Thermostat', function () {
       }
       expect(function () { thermostat.down() }).toThrowError('Minimum temperature is 10')
     })
+  })
 
+  describe('power saving mode', function() {
+
+    it('prevents temperature going above 25 degrees', function() {
+      thermostat.powerSavingMode('on');
+      for (var i = 0; i < 5; i++) {
+        thermostat.up();
+      }
+      expect(function() { thermostat.up() }).toThrowError('Maximum temperature is 25 degrees')
+    })
   })
 
 
