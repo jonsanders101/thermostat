@@ -27,4 +27,8 @@ As a time-pressed homeowner,
 So I can easily control my thermostat,
 I want a reset button that resets the temperature to 20 degrees
 
+As a energy conscious homeowner,
+So I can see how much energy I'm using,
+I want to see an output of my current energy usage
+
 ```

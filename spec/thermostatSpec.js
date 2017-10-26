@@ -72,4 +72,23 @@ describe('Thermostat', function () {
     })
   })
 
+  describe('energy useage', function() {
+
+    it('outputs low useage if temperature is below 18', function() {
+      for (var i = 0; i < 3; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.energy_use()).toEqual('Low')
+    })
+    it('outputs medium useage if temperature is between 18 and 24 degrees', function() {
+      expect(thermostat.energy_use()).toEqual('Medium')
+    })
+    it('outputs high useage if temperature is more than 24 degrees', function() {
+      for (var i = 0; i < 5; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.energy_use()).toEqual('High')
+    })
+  })
+
 });
