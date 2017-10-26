@@ -1,8 +1,6 @@
 $( document ).ready(function() {
 
-  $('#temp_reading').html(thermo._temperature);
-
-  $('.energy_usage').html(thermo.energy_use());
+  readThermostat();
 
   $( "#firebutton" ).click(function() {
     $( "#weird-gif" ).toggle();
@@ -10,20 +8,17 @@ $( document ).ready(function() {
 
   $( "#up" ).click(function(){
     thermo.up();
-    $('#temp_reading').html(thermo._temperature);
-    $('.energy_usage').html(thermo.energy_use());
+    readThermostat();
   })
 
   $( "#down" ).click(function() {
     thermo.down();
-    $('#temp_reading').html(thermo._temperature);
-    $('.energy_usage').html(thermo.energy_use());
+    readThermostat();
   })
 
   $( "#reset" ).click(function() {
     thermo.reset();
-    $('#temp_reading').html(thermo._temperature);
-    $('.energy_usage').html(thermo.energy_use());
+    readThermostat();
     $( "#psm_off" ).show();
     $( "#psm_on" ).hide();
   })
@@ -41,5 +36,10 @@ $( document ).ready(function() {
     $( "#psm_off" ).toggle();
     $( "#psm_on" ).toggle();
   })
+
+  function readThermostat (){
+    $('#temp_reading').html(thermo._temperature);
+    $('.energy_usage').html(thermo.energy_use());
+  }
 
 })
