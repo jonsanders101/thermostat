@@ -3,6 +3,22 @@ h1 {
   font: courier;
 }
 
+.control-buttons {
+  border-color: purple;
+}
+
+#psm_on {
+  display: none;
+}
+
+#psm_off {
+  display: inline;
+}
+
+#weird-gif {
+  display: none;
+}
+
 .tech-slideshow {
   height: 200px;
   max-width: 800px;
