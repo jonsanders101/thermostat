@@ -2,6 +2,7 @@
 
 const DEFAULT_TEMPERATURE = 20;
 const DEFAULT_MIN_TEMP = 10;
+const DEFAULT_MAX_TEMP = 32;
 
 function Thermostat() {
   this._temperature = DEFAULT_TEMPERATURE;
@@ -12,7 +13,7 @@ Thermostat.prototype.powerSavingMode = function(mode) {
    if (mode == 'on') {
      this._powerSavingModeLimit = 25;
    } else if (mode == 'off') {
-     this._powerSavingModeLimit = 32;
+     this._powerSavingModeLimit = DEFAULT_MAX_TEMP;
    }
 }
 
@@ -31,7 +32,7 @@ Thermostat.prototype.down = function () {
 }
 
 Thermostat.prototype.reset = function() {
-  this._temperature = 20
+  this._temperature = DEFAULT_TEMPERATURE;
 }
 
 Thermostat.prototype.energy_use = function() {
