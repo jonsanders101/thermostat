@@ -10,8 +10,8 @@ describe('Thermostat', function () {
 
   describe('temperature', function () {
 
-    it ('has default temperature of 20 degrees', function() {
-      expect(thermostat.temperature()).toEqual(20);
+    it ('initializes with the default temperature', function() {
+      expect(thermostat.temperature()).toEqual(DEFAULT_TEMPERATURE);
     });
   })
 
@@ -19,7 +19,7 @@ describe('Thermostat', function () {
 
     it('increases the temperature by 1 degree', function () {
       thermostat.up();
-      expect(thermostat.temperature()).toEqual(21);
+      expect(thermostat.temperature()).toEqual(DEFAULT_TEMPERATURE + 1);
     })
   })
 
@@ -27,7 +27,7 @@ describe('Thermostat', function () {
 
     it('decreases the temperature by 1 degree', function () {
       thermostat.down();
-      expect(thermostat.temperature()).toEqual(19);
+      expect(thermostat.temperature()).toEqual(DEFAULT_TEMPERATURE - 1);
     })
     it('throws an error when going below default minimum temperature degress', function () {
       for (var i = 0; i < DEFAULT_MIN_TEMP; i++) {
@@ -63,12 +63,12 @@ describe('Thermostat', function () {
 
   describe('reset', function() {
 
-    it('resets the temperature to 20 degrees', function() {
+    it('resets the temperature to default temperature', function() {
       for (var i = 0; i < 5; i++) {
         thermostat.up();
       }
       thermostat.reset();
-      expect(thermostat.temperature()).toEqual(20);
+      expect(thermostat.temperature()).toEqual(DEFAULT_TEMPERATURE);
     })
   })
 
