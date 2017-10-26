@@ -13,7 +13,6 @@ describe('Thermostat', function () {
     it ('has default temperature of 20 degrees', function() {
       expect(thermostat.temperature()).toEqual(20);
     });
-
   })
 
   describe('up', function () {
@@ -22,7 +21,6 @@ describe('Thermostat', function () {
       thermostat.up();
       expect(thermostat.temperature()).toEqual(21);
     })
-
   })
 
   describe('down', function () {
@@ -61,7 +59,17 @@ describe('Thermostat', function () {
       }
       expect(function () { thermostat.up() }).toThrowError('Maximum temperature is 25 degrees');
     })
+  })
 
+  describe('reset', function() {
+
+    it('resets the temperature to 20 degrees', function() {
+      for (var i = 0; i < 5; i++) {
+        thermostat.up();
+      }
+      thermostat.reset();
+      expect(thermostat.temperature()).toEqual(20);
+    })
   })
 
 });

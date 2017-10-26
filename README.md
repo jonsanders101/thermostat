@@ -23,4 +23,8 @@ As a warm human,
 So I don't get too hot,
 I want the maximum temperature to be be 32 degrees when the power saving mode is off
 
+As a time-pressed homeowner,
+So I can easily control my thermostat,
+I want a reset button that resets the temperature to 20 degrees
+
 ```
