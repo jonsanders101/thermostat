@@ -40,14 +40,14 @@ describe('Thermostat', function () {
   describe('power saving mode', function() {
 
     it('prevents temperature going above 25 degrees when on', function() {
-      thermostat.powerSavingMode('on');
+      thermostat.powerSavingModeOn();
       for (var i = 0; i < 5; i++) {
         thermostat.up();
       }
       expect(function() { thermostat.up() }).toThrowError('Maximum temperature is 25 degrees')
     })
     it('prevents temperature going above default maximum temperature degrees when off', function() {
-      thermostat.powerSavingMode('off');
+      thermostat.powerSavingModeOff();
       for (var i = 0; i < 12; i++) {
         thermostat.up();
       }
