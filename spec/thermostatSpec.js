@@ -29,11 +29,11 @@ describe('Thermostat', function () {
       thermostat.down();
       expect(thermostat.temperature()).toEqual(19);
     })
-    it('throws an error when going below 10 degress', function () {
-      for (var i = 0; i < 10; i++) {
+    it('throws an error when going below default minimum temperature degress', function () {
+      for (var i = 0; i < DEFAULT_MIN_TEMP; i++) {
         thermostat.down();
       }
-      expect(function () { thermostat.down() }).toThrowError('Minimum temperature is 10')
+      expect(function () { thermostat.down() }).toThrowError('Minimum temperature is ' + DEFAULT_MIN_TEMP)
     })
   })
 

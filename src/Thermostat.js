@@ -1,6 +1,7 @@
 'use strict';
 
 const DEFAULT_TEMPERATURE = 20;
+const DEFAULT_MIN_TEMP = 10;
 
 function Thermostat() {
   this._temperature = DEFAULT_TEMPERATURE;
@@ -25,7 +26,7 @@ Thermostat.prototype.up = function() {
 }
 
 Thermostat.prototype.down = function () {
-  if (this._temperature === 10) throw new Error('Minimum temperature is 10');
+  if (this._temperature === DEFAULT_MIN_TEMP) throw new Error("Minimum temperature is " + DEFAULT_MIN_TEMP);
   this._temperature--;
 }
 
