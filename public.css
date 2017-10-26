@@ -4,7 +4,13 @@ h1 {
 }
 
 .control-buttons {
-  border-color: purple;
+  :color: purple;
+  display: inline;
+}
+
+#psm-status {
+  :color: purple;
+  display: inline;
 }
 
 #psm_on {
