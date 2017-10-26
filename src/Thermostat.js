@@ -1,7 +1,8 @@
 'use strict';
 
+const DEFAULT_TEMPERATURE = 20;
+
 function Thermostat() {
-  const DEFAULT_TEMPERATURE = 20;
   this._temperature = DEFAULT_TEMPERATURE;
   this._powerSavingModeLimit = 25;
 }
