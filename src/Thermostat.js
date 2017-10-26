@@ -45,3 +45,11 @@ Thermostat.prototype.energy_use = function() {
   if (this._temperature <= 24) return 'Medium';
   if (this._temperature >= 24) return 'High';
 }
+
+$( document ).ready(function() {
+  $( "#firebutton" ).click(function(){
+      $( "#weirdgif" ).toggle();
+  })
+})
+
+$( "#weirdgif" ).hide();
