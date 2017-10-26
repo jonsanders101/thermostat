@@ -14,9 +14,7 @@ function Thermostat() {
 
 Thermostat.prototype.powerSavingModeOn = function() {
      this._maxTemp = POWER_SAVING_MODE_MAX;
-     if (this._isAboveMax()){
-       this._temperature = this._maxTemp;
-     }
+     if (this._isAboveMax()) this._temperature = this._maxTemp;
      this._isOnPowerSavingMode = true;
 }
 
