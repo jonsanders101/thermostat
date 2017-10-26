@@ -47,7 +47,6 @@ describe('Thermostat', function () {
       expect(function() { thermostat.up() }).toThrowError('Maximum temperature is 25 degrees')
     })
     it('if temperature is above new maximum temperature, temperature will be reduced to max temperature', function(){
-
       thermostat.powerSavingModeOff();
       for (var i = 0; i < (POWER_SAVING_MODE_MAX - DEFAULT_TEMPERATURE); i++) {
         thermostat.up();

@@ -36,6 +36,8 @@ $( document ).ready(function() {
 
   $( "#psm_on" ).click(function() {
     thermo.powerSavingModeOn();
+    console.log(thermo._temperature);
+    $('#temp_reading').html(thermo._temperature);
     $( "#psm_off" ).toggle();
     $( "#psm_on" ).toggle();
   })
